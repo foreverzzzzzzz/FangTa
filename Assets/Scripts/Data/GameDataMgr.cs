@@ -7,6 +7,11 @@ public class GameDataMgr
     private static GameDataMgr instance = new GameDataMgr();
     public static GameDataMgr Instance => instance;
 
+    //所有角色数据
+    public List<RoleInfo> roleInfoList;
+    
+    //玩家相关数据
+    public PlayerData playerData;
     
     //音效相关数据
     public MusicData musicData;
@@ -14,6 +19,10 @@ public class GameDataMgr
     {
         //初始化一些默认数据
         musicData = JsonMgr.Instance.LoadData<MusicData>("MusicData");
+        //获取初始化玩家数据
+        playerData = JsonMgr.Instance.LoadData<PlayerData>("PlayerData");
+        //读取角色数据
+        roleInfoList = JsonMgr.Instance.LoadData<List<RoleInfo>>("RoleInfo");
     }
     
     /// <summary>
@@ -22,5 +31,13 @@ public class GameDataMgr
     public void SaveMusicData()
     {
         JsonMgr.Instance.SaveData(musicData, "MusicData");
+    }
+    
+    /// <summary>
+    /// 存储玩家数据
+    /// </summary>
+    public void SavePlayerData()
+    {
+        JsonMgr.Instance.SaveData(playerData, "PlayerData");
     }
 }
