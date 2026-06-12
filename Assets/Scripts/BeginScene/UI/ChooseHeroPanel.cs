@@ -80,12 +80,12 @@ public class ChooseHeroPanel : BasePanel
                 UpdateLockBtn();
 
                 //提示面板 显示购买成功
-                
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("购买成功");
             }
             else
             {
                 //提示面板 显示 金钱不足
-                
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("金钱不足");
             }
         });
 
