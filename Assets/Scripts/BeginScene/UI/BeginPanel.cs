@@ -17,7 +17,7 @@ public class BeginPanel : BasePanel
             //播放摄像机 左转动画 然后 再显示选角面板
             Camera.main.GetComponent<CameraAnimator>().TurnLeft(() =>
             {
-                
+                UIManager.Instance.ShowPanel<ChooseHeroPanel>();
             });
             //隐藏开始界面
             UIManager.Instance.HidePanel<BeginPanel>();

@@ -7,6 +7,9 @@ public class GameDataMgr
     private static GameDataMgr instance = new GameDataMgr();
     public static GameDataMgr Instance => instance;
 
+    //记录选择的角色数据 用于之后在游戏场景中创建
+    public RoleInfo nowSelRole;
+    
     //所有角色数据
     public List<RoleInfo> roleInfoList;
     
