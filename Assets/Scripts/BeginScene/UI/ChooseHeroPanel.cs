@@ -96,7 +96,7 @@ public class ChooseHeroPanel : BasePanel
 
             //第二 是隐藏自己 显示场景选择界面
             UIManager.Instance.HidePanel<ChooseHeroPanel>();
-            
+            UIManager.Instance.ShowPanel<ChooseScenePanel>();
         });
 
         
